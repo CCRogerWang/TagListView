@@ -15,6 +15,7 @@ class TableviewDemoViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         title = "TableView Demo"
         tableView.register(UINib(nibName: "TagTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName: "TagHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "header")
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,15 +25,28 @@ class TableviewDemoViewController: UIViewController, UITableViewDelegate, UITabl
     
     // MARK: - tableview delegate datasource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? TagHeaderView
+        header?.actionHelper {
+            print("tap header in section: \(section)")
+        }
+        
+        return header
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
