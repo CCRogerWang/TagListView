@@ -16,7 +16,7 @@ class ViewController: UIViewController, TagListViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "First Demo"
         tagListView.delegate = self
         tagListView.addTag("TagListView")
         tagListView.addTag("TEAChart")

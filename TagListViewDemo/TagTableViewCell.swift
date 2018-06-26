@@ -10,6 +10,8 @@ import UIKit
 
 class TagTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var tagListView: TagListView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +23,7 @@ class TagTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+//    override func prepareForReuse() {
+//        tagListView.removeAllTags()
+//    }
 }

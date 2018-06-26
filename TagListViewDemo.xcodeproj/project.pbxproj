@@ -19,6 +19,9 @@
 		1AD177141B6D74570081F615 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6076DE1AFED38F009EA00E /* TagView.swift */; };
 		1AD177151B6D745B0081F615 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6076E21AFED866009EA00E /* TagListView.swift */; };
 		90A878531BA1EBA1001C8989 /* TagListView.h in Headers */ = {isa = PBXBuildFile; fileRef = 90A878521BA1EBA1001C8989 /* TagListView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBDD568620E28C370084E6F4 /* TableviewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDD568520E28C370084E6F4 /* TableviewDemoViewController.swift */; };
+		DBDD568A20E28CAE0084E6F4 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDD568820E28CAE0084E6F4 /* TagTableViewCell.swift */; };
+		DBDD568B20E28CAE0084E6F4 /* TagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBDD568920E28CAE0084E6F4 /* TagTableViewCell.xib */; };
 		FFBD46391C6E1AA60045684A /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD46381C6E1AA60045684A /* CloseButton.swift */; };
 		FFBD463A1C6E1AB50045684A /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD46381C6E1AA60045684A /* CloseButton.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +63,9 @@
 		1AD176F41B6D73E70081F615 /* TagListView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TagListView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD176F71B6D73E70081F615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90A878521BA1EBA1001C8989 /* TagListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListView.h; sourceTree = "<group>"; };
+		DBDD568520E28C370084E6F4 /* TableviewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableviewDemoViewController.swift; sourceTree = "<group>"; };
+		DBDD568820E28CAE0084E6F4 /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
+		DBDD568920E28CAE0084E6F4 /* TagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagTableViewCell.xib; sourceTree = "<group>"; };
 		FFBD46381C6E1AA60045684A /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloseButton.swift; path = ../TagListView/CloseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +111,7 @@
 			children = (
 				1A6076BE1AFED303009EA00E /* AppDelegate.swift */,
 				1A6076C01AFED303009EA00E /* ViewController.swift */,
+				DBDD568720E28C420084E6F4 /* TableViewDemo */,
 				1A6076E41AFED91A009EA00E /* TagListView */,
 				1A6076C21AFED303009EA00E /* Main.storyboard */,
 				1A6076C51AFED303009EA00E /* Images.xcassets */,
@@ -147,6 +154,16 @@
 				1AD176F71B6D73E70081F615 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DBDD568720E28C420084E6F4 /* TableViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				DBDD568520E28C370084E6F4 /* TableviewDemoViewController.swift */,
+				DBDD568820E28CAE0084E6F4 /* TagTableViewCell.swift */,
+				DBDD568920E28CAE0084E6F4 /* TagTableViewCell.xib */,
+			);
+			name = TableViewDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBDD568B20E28CAE0084E6F4 /* TagTableViewCell.xib in Resources */,
 				1A6076C41AFED303009EA00E /* Main.storyboard in Resources */,
 				1A6076C91AFED303009EA00E /* LaunchScreen.xib in Resources */,
 				1A6076C61AFED303009EA00E /* Images.xcassets in Resources */,
@@ -267,6 +285,8 @@
 				FFBD46391C6E1AA60045684A /* CloseButton.swift in Sources */,
 				1A6076C11AFED303009EA00E /* ViewController.swift in Sources */,
 				1A6076BF1AFED303009EA00E /* AppDelegate.swift in Sources */,
+				DBDD568A20E28CAE0084E6F4 /* TagTableViewCell.swift in Sources */,
+				DBDD568620E28C370084E6F4 /* TableviewDemoViewController.swift in Sources */,
 				1A6076DF1AFED38F009EA00E /* TagView.swift in Sources */,
 				1A6076E31AFED866009EA00E /* TagListView.swift in Sources */,
 			);

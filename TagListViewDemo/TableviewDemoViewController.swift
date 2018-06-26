@@ -8,12 +8,13 @@
 
 import UIKit
 
-class TableviewDemoViewController: UIViewController {
+class TableviewDemoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TagListViewDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = "TableView Demo"
+        tableView.register(UINib(nibName: "TagTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +22,55 @@ class TableviewDemoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - tableview delegate datasource
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TagTableViewCell
+        cell.contentView.frame.size.width = tableView.frame.width
+        cell.contentView.layoutSubviews()
+        cell.selectionStyle = .none
+        cell.tagListView.removeAllTags()
+        cell.tagListView.addTags(["person1", "person2", "person3", "person4", "person2", "person3", "person4"
+            , "person2", "person3", "person4", "person2", "person3", "person4", "person2", "person3", "person4"])
+        cell.tagListView.textFont = UIFont.systemFont(ofSize: 20)
+        
+        cell.tagListView.paddingX = 10
+        cell.tagListView.paddingY = 10
+        cell.tagListView.marginX = 10
+        cell.tagListView.marginY = 10
+        
+        cell.tagListView.tagBackgroundColor = UIColor.white
+        cell.tagListView.borderColor = UIColor.red
+        cell.tagListView.textColor = UIColor.black
+        cell.tagListView.borderWidth = 1
+        cell.tagListView.tagSelectedBackgroundColor = UIColor.red
+        cell.tagListView.selectedTextColor = UIColor.white
+        
+        cell.tagListView.cornerRadius = 10
+        
+        cell.tagListView.delegate = self
+        return cell
+    }
 
+    // MARK: - TagListViewDelegate
+    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        print("Tag pressed: \(title), \(sender)")
+        tagView.isSelected = !tagView.isSelected
+    }
+    
+    func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        print("Tag Remove pressed: \(title), \(sender)")
+        sender.removeTagView(tagView)
+    }
 }
